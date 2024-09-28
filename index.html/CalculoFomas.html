@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando Formas</title>
+
+    <style>
+
+        h1{
+            text-align: center;
+            font-size: 7vh;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        p{
+            text-align: center;
+            font-size: 4vh;
+        }
+
+        div{
+            width: 700px;
+            margin: auto;
+        }
+
+        body{
+            background-color: antiquewhite;
+        }
+        
+        td{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3vh;
+
+        }
+
+        table{
+            margin: 10vh;
+
+        }
+
+        
+        table, th, td {
+            border: 1px solid;
+            margin: 5vh;
+            
+        }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <h1>Vamos calcular formas?</h1>
+    
+    <p>Escolha aqui a forma que deseja realizar o cálculo: </p>
+    
+    <div>
+        <table>
+            <tr>
+                <td>Formas</td>
+                <td>Imagem<img src="" alt=""></td>
+                <td>Fórmula</td>
+                <td>Conta</td>
+                
+            </tr>
+            
+            <tbody>
+                <tr>
+                    <td>Quadrado: </td>
+                    <td><img src="./img/quadrado.png" alt="Quadrado azul" width="100vh"></td>
+                    <td>A = Base . Altura (h) </td>
+                    <td><input id="q1" type="number"> <input id="q2" type="number"> 
+                    <button onclick="quadrado()">Calcular</button></td>
+                </tr>
+            </tbody>
+            
+            <tbody>
+                <tr>
+                    <td>Losangulo: </td>
+                    <td><img src="./img/losango.png" alt="Losango azul" width="100vh"></td>
+                    <td>A= diagonal maior . diagonal menor/2 </td>
+                    <td><input id="l1" type="number"> <input id="l2" type="number"> 
+                    <button onclick="losangulo()">Calcular</button></td>
+                </tr>
+            </tbody>
+            
+            <tbody>
+                <tr>
+                    <td>Paralelogramo: </td>
+                    <td><img src="./img/paralelogramo.png" alt="Paralelogramo azul" width="100vh"></td>
+                    <td>A= base . altura</td>
+                    <td><input id="p1" type="number"> <input id="p2" type="number">
+                    <button onclick="paralelogramo()">Calcular</button></td>
+                </tr>
+            </tbody>
+
+            <tbody>
+            <tr>
+                <td>Triângulo: </td>
+                <td><img src="./img/triangulo.png" alt="triangulo azul" width="100vh"></td>
+                <td>A = π . r²</td>
+                <td><input id="t1" type="number"> <input id="t2" type="number">
+                <button onclick="triangulo()">Calcular</button></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+
+    <script>
+
+        var q1 = document.querySelector('#q1')
+        var q2 = document.querySelector('#q2')
+        var l1 = document.querySelector('#l1')
+        var l2 = document.querySelector('#l2')
+        var p1 = document.querySelector('#p1')
+        var p2 = document.querySelector('#p2')
+        var t1 = document.querySelector('#t1')
+        var t2 = document.querySelector('#t2')
+        var resultado = document.querySelector('span')
+
+        function quadrado() {
+            resultado.innerHTML = parseInt(q1.value) * parseInt(q2.value)
+        } 
+        
+        </script>
+
+<p>O seu resultado é: <span></span></p>
+
+
+</body>
+</html>
