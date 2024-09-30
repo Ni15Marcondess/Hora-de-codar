@@ -11,17 +11,17 @@
         h1{
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 4vh;
+            font-size: 5vh;
         }
         p.text{
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 2vh;
+            font-size: 3vh;
         }
 
         
         body{
-            background-color: antiquewhite;
+            background-image: linear-gradient(45deg, rgb(36, 33, 33)   ,rgb(253, 118, 201));
         }
 
         div.table{
@@ -32,12 +32,14 @@
 
         td{
             border: 1px solid;
+            width: 30vh;
+            height: 4vh;
         }
 
         p{
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 2vh;
+            font-size: 3vh;
         }
 
         div.entrada{
@@ -51,12 +53,48 @@
 
         div.table{
             text-align: center;
-            width: 500px;
-            margin: auto;
+            width: 60vh;
+            margin: 80vh;
             margin-top: 2vh;
+            border: 2px, black;
+
         }
 
+        button.botao{
+            width: 30vh;
+            height: 5vh;
+            border-radius: 15px;
+            background-color: black;
+            color: aliceblue;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2vh;
+            margin: 2px, white;
+            pointer-events: visibleFill;
         
+        }
+
+        input{
+            width: 30vh;
+            height: 3vh;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: rgb(199, 199, 199);
+            font-size: 2vh;
+        }
+/*
+        button.limpar {
+            height: 4vh;
+            width: 10vh;
+            margin-top: 2vh;
+            border-radius: 5px;
+            background-color: rgb(248, 178, 98);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2vh;
+
+        }
+*/
+
     </style>
 </head>
 
@@ -64,26 +102,33 @@
 
     <h1>Vamos calcular?</h1>
     <p class="text">Realize aqui os calculos que você deseja: </p>
-
- <div class="entrada">
- <input type="number">
-     <input type="number"> <br>
-     <br>
+    
+    <div class="entrada">
+        <input id="num1" placeholder="Digite o número maior" type="number" step="0.01">
+        <input id="num2" placeholder="Digite o número menor" type="number" step="0.01"><br>
+        <br>
+        <input id="num3" placeholder="Digite algum valor adicional" type="number" step="0.01">
+         <!--<button class="limpar"><b>Limpar</b></button>!--> <br>
+        <br>
+    </div>
+    
+    <div class="botao">
+        
+        <button id="quadrado" class="botao" onclick="calcularquadrado()">Quadrado</button> 
+        <button class="botao" onclick="calcularlosango()">losango</button> <br>
+        <br>
+        <button id="Paralelogramo" class="botao" onclick="calcularparalelogramo()">Paralelogramo</button>
+        <button class="botao" onclick="">Triângulo</button> <br>
+        <br>
+        <button id="trapesio" class="botao" onclick="calculartrapesio()">Trapésio</button>
     </div>
 
-<div class="botao">
-
-    <button>Quadrado</button> 
-    <button>losango</button> <br>
-    <br>
-    <button>Paralelogramo</button>
-    <button>Triângulo</button>
-</div>
+    <p></p>
 
     <div class="table">
         <table>
             <tr>
-                <td>Formas</td>
+                <td><b>Formas</b></td>
                 <td>Fórmula</td>
                 
                 
@@ -91,38 +136,88 @@
             
             <tbody>
                 <tr>
-                    <td id="quadrado">Quadrado: </td>
+                    <td><b> Quadrado</b> </td>
                     <td>A = Base . Altura (h) </td>
                 </tr>
             </tbody>
             
             <tbody>
                 <tr>
-                    <td>Losango: </td>
+                    <td><b>Losango:</b> </td>
                     <td>A= diagonal maior . diagonal menor/2 </td>
                 </tr>
             </tbody>
             
             <tbody>
                 <tr>
-                    <td>Paralelogramo: </td>
+                    <td><b>Paralelogramo: </b></td>
                     <td>A= base . altura</td>
                 </tr>
             </tbody>
             
             <tbody>
                 <tr>
-                    <td>Triângulo: </td>
+                    <td><b>Círculo: </b></td>
                     <td>A = π . r²</td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td><b>Trapézio: </b></td>
+                    <td>A= (Base maior + base menor).h /2</td>
                 </tr>
             </tbody>
         </table>
         
         <script>
+            function calcularquadrado() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+
+                const quadrado = (num1 * num2);
+
+                document.querySelector("p").innerHTML = quadrado; 
+            }
+
+            function calcularparalelogramo() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+
+                const Paralelogramo = (num1 * num2);
+                
+                document.querySelector("p").innerHTML = Paralelogramo
+
+            }
+
+            function calcularlosango() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+
+                const losango = ( 2/ (num1 * num2));
+
+                document.querySelector("p").innerHTML = losango
+            }
+
+            function calcularTriangulo() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+
+                const triangulo = ()
+            }
+
+            function calculartrapesio() {
+                const num1 = paserfloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+                const num3 = parseFloat(document.getElementById("num3").value)
+
+                const trapesio = (/2 ( (num1 + num2) *num3) )
+
+                document.querySelector("p").innerHTML = trapesio
+            }
 
             
         </script>
     </div>
-    <p>Seu resultado é: </p>
 </body>
 </html>
