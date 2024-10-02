@@ -101,7 +101,7 @@
 <body>
 
     <h1>Vamos calcular?</h1>
-    <p class="text">Realize aqui os calculos que você deseja: </p>
+    <p>Realize aqui os calculos que você deseja: </p>
     
     <div class="entrada">
         <input id="num1" placeholder="Digite o número maior" type="number" step="0.01">
@@ -114,16 +114,15 @@
     
     <div class="botao">
         
-        <button id="quadrado" class="botao" onclick="calcularquadrado()">Quadrado</button> 
-        <button class="botao" onclick="calcularlosango()">losango</button> <br>
+        <button id="retangulo" class="botao" onclick="calcularretangulo()">Retângulo</button> 
+        <button id="losangulo" class="botao" onclick="calcularlosango()">losango</button> <br>
         <br>
         <button id="Paralelogramo" class="botao" onclick="calcularparalelogramo()">Paralelogramo</button>
-        <button class="botao" onclick="">Triângulo</button> <br>
+        <button id="triangulo" class="botao" onclick="calcularTriangulo()">Triângulo</button> <br>
         <br>
         <button id="trapesio" class="botao" onclick="calculartrapesio()">Trapésio</button>
+        <button id="quadrado" class="botao" onclick="calcularquadrado()" >Quadrado</button>
     </div>
-
-    <p></p>
 
     <div class="table">
         <table>
@@ -136,7 +135,7 @@
             
             <tbody>
                 <tr>
-                    <td><b> Quadrado</b> </td>
+                    <td><b> Retângulo: </b> </td>
                     <td>A = Base . Altura (h) </td>
                 </tr>
             </tbody>
@@ -168,16 +167,22 @@
                     <td>A= (Base maior + base menor).h /2</td>
                 </tr>
             </tbody>
+            <tbody>
+                <tr>
+                    <td><b>Triângulo: </b></td>
+                    <td>A= base . altura /2</td>
+                </tr>
+            </tbody>
         </table>
         
         <script>
-            function calcularquadrado() {
+            function calcularretangulo() {
                 const num1 = parseFloat(document.getElementById("num1").value);
                 const num2 = parseFloat(document.getElementById("num2").value);
 
-                const quadrado = (num1 * num2);
+                const retangulo = (num1 * num2);
 
-                document.querySelector("p").innerHTML = quadrado; 
+                document.querySelector("p").innerHTML = retangulo; 
             }
 
             function calcularparalelogramo() {
@@ -186,7 +191,7 @@
 
                 const Paralelogramo = (num1 * num2);
                 
-                document.querySelector("p").innerHTML = Paralelogramo
+                document.querySelector("p").innerHTML = Paralelogramo;
 
             }
 
@@ -194,27 +199,49 @@
                 const num1 = parseFloat(document.getElementById("num1").value);
                 const num2 = parseFloat(document.getElementById("num2").value);
 
-                const losango = ( 2/ (num1 * num2));
+                const losango = (2/ (num1 * num2));
 
-                document.querySelector("p").innerHTML = losango
+                document.querySelector("p").innerHTML = losango;
             }
 
             function calcularTriangulo() {
                 const num1 = parseFloat(document.getElementById("num1").value);
                 const num2 = parseFloat(document.getElementById("num2").value);
 
-                const triangulo = ()
+                const triangulo = (2/ (num1 * num2));
+
+                document.querySelector("p").innerHTML = triangulo;
             }
 
             function calculartrapesio() {
-                const num1 = paserfloat(document.getElementById("num1").value);
+                const num1 = parseFloat(document.getElementById("num1").value);
                 const num2 = parseFloat(document.getElementById("num2").value);
-                const num3 = parseFloat(document.getElementById("num3").value)
+                const num3 = parseFloat(document.getElementById("num3").value);
 
-                const trapesio = (/2 ( (num1 + num2) *num3) )
+                const trapesio = (2/((num1 + num2)*num3));
 
-                document.querySelector("p").innerHTML = trapesio
+                document.querySelector("p").innerHTML = trapesio;
+                
             }
+
+            function calcularquadrado() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+
+                const quadrado = (num1 * num2);
+
+                document.querySelector("p").innerHTML = quadrado;
+            }
+
+            function calcularcirculo() {
+                const num1 = parseFloat(document.getElementById("num1").value);
+                const num2 = parseFloat(document.getElementById("num2").value);
+                
+                const circulo = (num1 * (num2 * num2));
+
+                document.querySelector("p").innerHTML = circulo
+            }
+
 
             
         </script>
